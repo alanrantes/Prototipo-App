@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consulta de Materiais</title>
+  <link rel="stylesheet" href="Css/almoxarifado.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Pesquisa de materiais -->
+    <section class="form-cadastro">
+      <h2>Pesquisar Material</h2>
+      <div class="form-group">
+        <label for="idMaterial">ID</label>
+        <input type="text" id="idMaterial" placeholder="Digite o ID do material" />
+      </div>
+      <div class="form-group">
+        <label for="descMaterial">Descrição</label>
+        <input type="text" id="descMaterial" placeholder="Digite a descrição do material" />
+      </div>
+      <div class="form-group">
+        <label for="centroCusto">Centro de Custo</label>
+        <input type="text" id="centroCusto" placeholder="Digite o centro de custo" />
+      </div>
+      <button id="btnPesquisar">Pesquisar</button>
+    </section>
+
+    <!-- Simulação de consumo -->
+    <section class="simulacao-consumo">
+      <h2>Simular Consumo</h2>
+      <div class="form-group">
+        <label for="simCodigo">Código do item</label>
+        <input type="text" id="simCodigo" placeholder="Digite o código do material" />
+      </div>
+      <div class="form-group">
+        <label for="simQuantidade">Quantidade a consumir</label>
+        <input type="number" id="simQuantidade" min="1" value="1" />
+      </div>
+      <button id="btnSimular">Simular Consumo</button>
+      <div id="simResultado"></div>
+    </section>
+  </main>
+
+  <!-- Modal de resultados -->
+  <div id="modalResultados" class="modal hidden">
+    <div class="modal-content">
+      <span id="fecharModal" class="modal-close">&times;</span>
+      <h2>Materiais Encontrados</h2>
+      <div id="resultadosContainer"></div>
+    </div>
+  </div>
+
+  <script src="Js/almoxarifado.js"></script>
+</body>
+</html>

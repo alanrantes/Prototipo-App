@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="Css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <!-- Backdrop que escurece a página por baixo do menu -->
+        <div id="menu-backdrop" class="menu-backdrop"></div>
+        <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+        <div class="menu-lateral" id="menu-lateral">
+          <div class="menu-lateral-header">
+            <h5>STAMPING</h5>
+            <button class="btn-close" onclick="toggleMenu()">×</button>
+          </div>
+          <div class="menu-lateral-body">
+            <!--Colocar as páginas do menu suspenso aqui-->
+            <ul class="navbar-nav">
+              <li><a href="grafico.html">📈 Gerar Gráficos</a></li>
+              <li><a href="carta.html">📑 Produção</a></li>
+              <li><a href="ordem.html">📝 Ordens de Serviço</a></li>
+              <li><a href="maquinas.html">⚙️ Linhas de Produção</a></li>
+              <li><a href="almoxarifado.html">📦 Almoxarifado</a></li>
+              <li><a href="seguranca.html">🦺 Segurança</a></li>
+              <li><a href="preventivas.html">🔧 Preventivas</a></li>
+              <li><a href="dmc.html">📊 DMC</a></li>
+              <li><a href="#">🚧 Em Desenvolvimento</a></li>
+              <li><a href="#">🚧 Em Desenvolvimento</a></li>
+              <li><a href="#">🚧 Em Desenvolvimento</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="logo-container">
+      <img src="assets/Logo.png" alt="Logo Stellantis" class="logo" />
+    </div>
+  </header>
+
+
+
+  <div class="search-bar">
+    <input type="text" placeholder="Digite o código" id="searchInput" />
+    <button onclick="buscarPeca()">Buscar</button>
+  </div>
+
+  <div class="container-navegacao">
+    <nav>
+      <button id="btn1" onclick="navegar('1')">PÁGINA 1</button>
+      <button id="btn2" onclick="navegar('2')">PÁGINA 2</button>
+      <button id="btn3" onclick="navegar('3')">PÁGINA 3</button>
+      <button id="btn4" onclick="navegar('4')">PÁGINA 4</button>
+    </nav>
+  </div>
+
+  <script src="Js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestão de Ordens</title>
+  <link rel="stylesheet" href="Css/ordem.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Filtros -->
+    <section class="filtros">
+      <input type="text" id="filtroCodigo" placeholder="Código da Ordem" />
+      <button onclick="filtrarOrdens()">Filtrar</button>
+    </section>
+
+    <!-- Lista de Ordens -->
+    <section id="listaOrdens" class="lista-ordens">
+      <!-- ordens serão carregadas via JS -->
+    </section>
+  </main>
+
+  <!-- Botão flutuante para criar ordem -->
+  <button class="btn-flutuante" onclick="abrirModalCriar()">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <!-- Modal criar/editar ordem -->
+  <div class="modal" id="modalOrdem">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalOrdem')">&times;</span>
+      <h2 id="modalTitulo">Nova Ordem</h2>
+
+      <label for="problema">Problema</label>
+      <input type="text" id="problema" placeholder="Descreva o problema" />
+
+      <label for="descricao">Descrição</label>
+      <input type="text" id="descricao" placeholder="Descrição da ordem" />
+
+      <label for="prioridade">Prioridade</label>
+      <select id="prioridade">
+        <option value="Alta">Alta</option>
+        <option value="Média" selected>Média</option>
+        <option value="Baixa">Baixa</option>
+      </select>
+
+      <label for="status">Status</label>
+      <select id="status">
+        <option value="Aberta" selected>Aberta</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Concluída">Concluída</option>
+      </select>
+
+      <div class="modal-actions">
+        <button onclick="salvarOrdem()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Js/ordem.js"></script>
+</body>
+
+</html>

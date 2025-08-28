@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda de Manutenção Preventiva</title>
+  <link rel="stylesheet" href="Css/preventivas.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="agenda-container">
+    <!-- Calendário -->
+    <section class="calendario">
+      <div class="calendario-header">
+        <button onclick="alterarMes(-1)" aria-label="Mês anterior">&lt;</button>
+        <div id="monthYear"></div>
+        <button onclick="alterarMes(1)" aria-label="Próximo mês">&gt;</button>
+      </div>
+      <div class="dias-semana">
+        <div>Dom</div>
+        <div>Seg</div>
+        <div>Ter</div>
+        <div>Qua</div>
+        <div>Qui</div>
+        <div>Sex</div>
+        <div>Sáb</div>
+      </div>
+      <div class="dias" id="dias"></div>
+    </section>
+
+    <!-- Lista de manutenções -->
+    <section class="agenda-detalhes">
+      <h3>Manutenções Agendadas</h3>
+      <ul class="lista-manutencoes" id="listaManutencoes"></ul>
+    </section>
+  </main>
+
+  <!-- Botão flutuante para adicionar manutenção -->
+  <button class="btn-flutuante" id="btnAdicionarManutencao">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <!-- Modal de criação/edição -->
+  <div class="modal" id="modalManutencao" style="display:none; justify-content:center; align-items:center;">
+    <div class="modal-content">
+      <span class="modal-close" id="btnFecharModal">&times;</span>
+      <h2>Nova Manutenção</h2>
+
+      <label for="inputData">Data</label>
+      <input type="date" id="inputData" />
+
+      <label for="inputDescricao">Descrição</label>
+      <textarea id="inputDescricao" rows="4" placeholder="Descreva a manutenção"></textarea>
+
+      <div class="modal-actions">
+        <button id="btnSalvarManutencao">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Js/preventivas.js"></script>
+</body>
+</html>

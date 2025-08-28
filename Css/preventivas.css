@@ -1,0 +1,299 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  padding-top: 60px;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: #000545;
+  padding: 12px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid white;
+  z-index: 1000;
+}
+
+.navbar-home-icon {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Container principal */
+.agenda-container {
+  max-width: 960px;
+  margin: 20px auto 40px auto;
+  display: flex;
+  gap: 40px;
+  padding: 0 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Calendário */
+.calendario {
+  flex: 1 1 320px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px 25px 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  user-select: none;
+}
+
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000545;
+}
+
+.calendario-header button {
+  background: #000545;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calendario-header button:hover {
+  background-color: #2a2f6b;
+}
+
+.dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 700;
+  color: #555;
+  text-align: center;
+  user-select: none;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.dia {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  position: relative;
+}
+
+.dia:hover {
+  background-color: #c1c5f3;
+  color: #000545;
+}
+
+.dia.ativo {
+  background-color: #000545;
+  color: white;
+  font-weight: 700;
+}
+
+.badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #c50101;
+  border-radius: 50%;
+}
+
+/* Lista de manutenções */
+.agenda-detalhes {
+  flex: 1 1 300px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 20px 25px 30px 25px;
+  max-height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-detalhes h3 {
+  margin-bottom: 14px;
+  color: #000545;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lista-manutencoes {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.lista-manutencoes li {
+  background: #e6e9ff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  word-break: break-word;
+}
+
+/* Botão flutuante */
+.btn-flutuante {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: #000545;
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  z-index: 1100;
+}
+
+.btn-flutuante:hover {
+  background-color: #2a2f6b;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.modal-close:hover {
+  color: #000545;
+}
+
+/* Inputs e textarea no modal */
+label {
+  font-weight: 600;
+  color: #000545;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+input[type="date"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #000545;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.modal-actions button {
+  background-color: #000545;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button:hover {
+  background-color: #2a2f6b;
+}
+
+/* Scrollbar customizada para a lista de manutenções */
+.agenda-detalhes::-webkit-scrollbar {
+  width: 8px;
+}
+
+.agenda-detalhes::-webkit-scrollbar-thumb {
+  background-color: #000545;
+  border-radius: 6px;
+}
+
+.agenda-detalhes::-webkit-scrollbar-track {
+  background-color: #f4f6f8;
+}

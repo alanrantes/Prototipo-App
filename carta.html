@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coleta de Dados - Produção</title>
+<link rel="stylesheet" href="Css/carta.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-home-icon" aria-label="Home">
+        <i class="fas fa-house"></i>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <form id="formColeta" class="form-coleta" novalidate>
+    <!-- Campos básicos -->
+    <div class="campo-group">
+      <label for="data">Data</label>
+      <input type="date" id="data" required />
+    </div>
+    <div class="campo-group">
+      <label for="hora">Hora</label>
+      <input type="time" id="hora" required />
+    </div>
+    
+    <!-- Campo Linha customizado -->
+    <div class="select-custom">
+      <label for="linha">Linha</label>
+      <div class="select-selected" tabindex="0">Selecione a linha</div>
+      <div class="select-items select-hide"></div>
+    </div>
+    <input type="hidden" id="linha" name="linha" required />
+
+    <div class="campo-group">
+      <label for="turno">Turno</label>
+      <select id="turno" required>
+        <option value="" disabled selected>Selecione o turno</option>
+        <option value="1">1º</option>
+        <option value="2">2º</option>
+        <option value="3">3º</option>
+      </select>
+    </div>
+    <div class="campo-group">
+      <label for="teamLeader">Team Leader</label>
+      <input type="text" id="teamLeader" placeholder="Nome do Team Leader" required />
+    </div>
+    <div class="campo-group">
+      <label for="operador">Operador</label>
+      <input type="text" id="operador" placeholder="Nome do Operador" required />
+    </div>
+    <div class="campo-group">
+      <label for="fornecedor">Fornecedor</label>
+      <input type="text" id="fornecedor" placeholder="Nome do Fornecedor" required />
+    </div>
+
+    <!-- Botões para abrir modais -->
+    <div class="botoes-modais">
+      <button type="button" id="btnInspecoes">Inspeções <span id="inspecoesResumo"></span></button>
+      <button type="button" id="btnRefugoReparacao">Refugo / Reparação <span id="refugoResumo"></span></button>
+      <button type="button" id="btnProducao">Produção <span id="producaoResumo"></span></button>
+    </div>
+
+    <button type="submit" class="btn-salvar">Salvar Dados</button>
+  </form>
+</main>
+
+<!-- MODAIS -->
+
+<!-- Modal Inspeções -->
+<div class="modal" id="modalInspecoes">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fechar modal">×</button>
+    <h2>Digite as inspeções</h2>
+    <div id="inspecoesContainer"></div>
+    <button type="button" id="addInspecao">+</button>
+    <div class="modal-actions">
+      <button id="fecharInspecoes">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Refugo/Reparação -->
+<div class="modal" id="modalRefugoReparacao">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fechar modal">×</button>
+    <h2>Refugo</h2>
+    <div class="grupo-refugo" data-tipo="Ruptura"><label>Ruptura</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-refugo" data-tipo="Amassados"><label>Amassados</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-refugo" data-tipo="Deformação"><label>Deformação</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-refugo" data-tipo="Material"><label>Material</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-refugo" data-tipo="F.Material"><label>F.Material</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-refugo" data-tipo="Outros"><label>Outros</label><input type="number" min="0" value="0" /></div>
+
+    <h2 style="margin-top:25px;">Reparação</h2>
+    <div class="grupo-reparacao" data-tipo="Pontos +"><label>Pontos +</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Pontos -"><label>Pontos -</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Amassados"><label>Amassados</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Deformação"><label>Deformação</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Ruptura"><label>Ruptura</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Rebarba"><label>Rebarba</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Risco"><label>Risco</label><input type="number" min="0" value="0" /></div>
+    <div class="grupo-reparacao" data-tipo="Material"><label>Material</label><input type="number" min="0" value="0" /></div>
+
+    <div class="modal-actions">
+      <button id="fecharRefugoReparacao">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Produção -->
+<div class="modal" id="modalProducao">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fechar modal">×</button>
+    <h2>Produção</h2>
+    <label for="acumulado">Acumulado</label>
+    <input type="number" id="acumulado" min="0" value="0" />
+    <label for="producao">Produção</label>
+    <input type="number" id="producao" min="0" value="0" />
+    <label for="numDefeitos">Nº Defeitos</label>
+    <input type="number" id="numDefeitos" min="0" value="0" />
+    <label for="fracao">Fração %</label>
+    <input type="number" id="fracao" min="0" max="100" step="0.01" value="0" />
+
+    <div class="modal-actions">
+      <button id="fecharProducao">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="Js/carta.js"></script>
+</body>
+</html>

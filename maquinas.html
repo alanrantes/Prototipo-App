@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monitoramento de Máquinas</title>
+  <link rel="stylesheet" href="Css/maquinas.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Busca -->
+    <section class="busca-section">
+      <input
+        type="text"
+        id="buscaMaquina"
+        placeholder="Digite a linha"
+      />
+      <button onclick="filtrarMaquinas()">Buscar</button>
+    </section>
+
+    <!-- Lista de Máquinas -->
+    <section id="listaMaquinas" class="lista-maquinas"></section>
+  </main>
+
+  <!-- Modais -->
+
+  <!-- Modal Alterar Status -->
+  <div class="modal" id="modalAlterarStatus">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalAlterarStatus')">&times;</span>
+      <h2>Alterar Status</h2>
+      <select id="selectStatus">
+        <option value="Operando">Operando</option>
+        <option value="Manutenção">Manutenção</option>
+        <option value="Parada">Parada</option>
+      </select>
+      <div class="modal-actions">
+        <button onclick="confirmarAlterarStatus()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Falhas Opções -->
+  <div class="modal" id="modalFalhasOpcoes">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalFalhasOpcoes')">&times;</span>
+      <h2>Falhas</h2>
+      <div class="modal-actions" style="justify-content: space-around;">
+        <button onclick="abrirModalAdicionarFalha()">Adicionar</button>
+        <button onclick="abrirModalHistoricoFalhas()">Histórico</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Adicionar Falha -->
+  <div class="modal" id="modalAdicionarFalha">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalAdicionarFalha')">&times;</span>
+      <h2>Adicionar Falha</h2>
+      <label for="falhaProblema">Problema</label>
+      <input type="text" id="falhaProblema" placeholder="Descreva o problema" />
+      <label for="falhaData">Data</label>
+      <input type="date" id="falhaData" />
+      <label for="falhaHora">Hora</label>
+      <input type="time" id="falhaHora" />
+      <label for="falhaRegistro">Registro</label>
+      <input type="text" id="falhaRegistro" placeholder="Seu registro" />
+      <label for="falhaManutencao">Manutenção</label>
+      <input
+        type="text"
+        id="falhaManutencao"
+        placeholder="Descrição da manutenção feita"
+      />
+      <div class="modal-actions">
+        <button onclick="confirmarAdicionarFalha()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Histórico Falhas -->
+  <div class="modal" id="modalHistoricoFalhas">
+    <div class="modal-content historico-falhas-content">
+      <span class="modal-close" onclick="fecharModal('modalHistoricoFalhas')">&times;</span>
+      <h2>Histórico de Falhas</h2>
+      <div id="containerHistoricoFalhas"></div>
+    </div>
+  </div>
+
+  
+  <!-- Modal Adicionar Máquina -->
+  <div class="modal" id="modalAdicionarMaquina">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalAdicionarMaquina')">&times;</span>
+      <h2>Adicionar Máquina</h2>
+      <label for="inputNomeMaquina">Nome da Máquina</label>
+      <input type="text" id="inputNomeMaquina" placeholder="Nome da máquina" />
+      <div class="modal-actions">
+        <button onclick="confirmarAdicionarMaquina()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Js/maquinas.js"></script>
+</body>
+</html>

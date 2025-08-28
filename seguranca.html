@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Registros de Ocorrências</title>
+  <link rel="stylesheet" href="Css/seguranca.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    html, body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Filtros -->
+    <section class="filtros">
+      <input
+        type="text"
+        id="filtroCodigo"
+        placeholder="Código da ocorrência"
+        maxlength="7"
+      />
+      <input
+        type="text"
+        id="filtroGalpao"
+        placeholder="Galpão"
+        maxlength="5"
+      />
+      <button onclick="filtrarOcorrencias()">Buscar</button>
+    </section>
+
+    <!-- Lista de ocorrências -->
+    <section id="listaOcorrencias" class="lista-ocorrencias"></section>
+  </main>
+
+  <!-- Botão flutuante para criar nova ocorrência -->
+  <button class="btn-flutuante" onclick="abrirModalCriar()">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <!-- Modal criar/editar ocorrência -->
+  <div class="modal" id="modalOcorrencia">
+    <div class="modal-content">
+      <span class="modal-close" onclick="fecharModal('modalOcorrencia')">&times;</span>
+      <h2 id="modalTitulo">Nova Ocorrência</h2>
+
+      <label for="codigo">Código (gerado automaticamente)</label>
+      <input type="text" id="codigo" disabled />
+
+      <label for="galpao">Galpão</label>
+      <input type="text" id="galpao" maxlength="5" placeholder="Número do galpão" />
+
+      <label for="area">Área</label>
+      <input type="text" id="area" placeholder="Área da ocorrência" />
+
+      <label for="registro">Registro</label>
+      <input type="text" id="registro" placeholder="Seu registro" />
+
+      <label for="ute">UTE</label>
+      <input type="text" id="ute" placeholder="UTE relacionada" />
+
+      <label for="relato">Relato do incidente ou quase acidente</label>
+      <textarea
+        id="relato"
+        placeholder="Descreva o incidente detalhadamente"
+      ></textarea>
+
+      <div class="modal-actions">
+        <button onclick="salvarOcorrencia()">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Js/seguranca.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Completo de Análise</title>
+  <link rel="stylesheet" href="Css/grafico.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- Sua navbar fixa no topo -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-home-icon" aria-label="Home">
+          <i class="fas fa-house"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cards-metricas">
+      <div class="card">
+        <h2 id="prod-total">0</h2>
+        <p>Produção Total</p>
+      </div>
+      <div class="card">
+        <h2 id="pecas-dia">0</h2>
+        <p>Peças/Dia</p>
+      </div>
+      <div class="card">
+        <h2 id="linhas-ativas">0</h2>
+        <p>Linhas Ativas</p>
+      </div>
+    </section>
+
+    <section class="filtros" id="filtros">
+      <select id="linha">
+        <option value="13">Linha 13</option>
+        <option value="14">Linha 14</option>
+        <option value="15">Linha 15</option>
+      </select>
+
+      <input type="text" id="peca" placeholder="ID da Peça" />
+
+      <select id="periodo">
+        <option value="diario">Diário</option>
+        <option value="mensal">Mensal</option>
+      </select>
+
+      <div class="botoes-gerar-exportar">
+        <button onclick="gerarGraficos()">Gerar Gráfico</button>
+        <button onclick="exportarXLSX()">Exportar Excel</button>
+        <button onclick="exportarPNG()">Exportar PNG</button>
+      </div>
+    </section>
+
+    <section class="graficos">
+      <canvas id="grafico1"></canvas>
+      <canvas id="grafico2"></canvas>
+    </section>
+  </main>
+
+  <script src="Js/grafico.js"></script>
+</body>
+</html>
