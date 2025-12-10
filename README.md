@@ -1,68 +1,75 @@
-# 📌 Sistema de Logística – Protótipo em C#
+# 📌 Protótipo de Aplicativo Industrial  
 
 ## 📖 Descrição  
 
 <p align="justify">
-Este projeto consiste em um protótipo de sistema de logística desenvolvido em <strong>C#</strong>, com foco no estudo e prática de <strong>Programação Orientada a Objetos (POO)</strong>. O sistema simula o gerenciamento de operações logísticas, como veículos, entregas, motoristas, pessoas físicas e jurídicas, endereços e notas fiscais.
+Este é um protótipo de aplicativo mobile voltado para o setor industrial, desenvolvido como projeto individual de inovação e práticas de desenvolvimento. O objetivo é centralizar funcionalidades de monitoramento,
+análise e gestão de processos em um único sistema, facilitando a tomada de decisão e otimizando as operações.
 </p>
 
 <p align="justify">
-O objetivo principal do projeto é consolidar conceitos fundamentais de POO, como <strong>classes, encapsulamento, herança, polimorfismo e abstração</strong>, além de preparar a base estrutural para uma futura evolução do sistema com <strong>.NET, API REST e banco de dados</strong>.  
-Atualmente, o sistema funciona de forma simulada, utilizando dados em memória, sem persistência em banco.
+O protótipo já está funcional em termos de interface e navegação, com exportação para APK utilizando Capacitor + Android Studio. O aplicativo foi testado em dispositivo real e está operando corretamente. 
+Atualmente, os módulos funcionam de forma simulada, utilizando dados fictícios em JavaScript, enquanto a integração com SQL ainda será implementada.
 </p>
 
 ---
 
 ## 🚀 Funcionalidades do Protótipo  
 
-✔️ **Gestão de Veículos**: Cadastro e manipulação de veículos como carros, caminhões e motos, utilizando herança e polimorfismo.  
+✔️ **Tela Inicial**: Campo de busca e acesso rápido aos módulos.  
 
-✔️ **Motoristas**: Associação de motoristas aos veículos e controle de dados básicos.  
+✔️ **Menu Suspenso**: Navegação lateral para gráficos, ordens de serviço, almoxarifado e segurança.  
 
-✔️ **Pessoas**: Modelagem de pessoas físicas e jurídicas, aplicando herança entre classes.  
+✔️ **Gerar Gráficos**: Geração de gráficos diários e mensais a partir de dados fictícios em **JavaScript**.  
 
-✔️ **Endereços**: Estruturação de endereços para origem e destino das entregas.  
+✔️ **Produção**: Registro e monitoramento simulado de dados de produção.  
 
-✔️ **Entregas**: Simulação do fluxo de entrega, relacionando veículo, motorista e destinatário.  
+✔️ **Ordens de Serviço**: Consulta e gerenciamento de ordens de serviço (dados fictícios).  
 
-✔️ **Notas Fiscais**: Vinculação de notas fiscais às entregas para controle logístico.  
+✔️ **Linhas**: Monitoramento ilustrativo de status operacional.  
 
-✔️ **Cálculo de Capacidade**: Simulação de carga com base na capacidade do veículo.  
+✔️ **Almoxarifado**: Protótipo para controle de estoque de materiais e insumos.  
 
-✔️ **Arquitetura Orientada a Objetos**: Estrutura totalmente baseada em boas práticas de POO.  
+✔️ **Segurança**: Registro simulado de protocolos, incidentes e medidas preventivas.  
+
+✔️ **Preventivas**: Gestão simulada de manutenções preventivas.  
+
+✔️ **DMC**: Simulação de custos de produção para apoio à tomada de decisão.  
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas  
 
-- **C#**: Linguagem principal do projeto.
+- **HTML5:** Estrutura das telas do aplicativo.
 
-- **.NET (Console / Base de API)**: Estrutura inicial do sistema.
+- **CSS3:** Estilização e design responsivo.
 
-- **Programação Orientada a Objetos**: Encapsulamento, herança, polimorfismo e abstração.
+- **JavaScript:** Navegação, manipulação de dados e geração de gráficos fictícios.
+ 
+- **Capacitor:** Empacotamento do app para mobile.
 
-- **Visual Studio / VS Code**: Ambiente de desenvolvimento.
+- **Android Studio:** Geração e testes do APK em dispositivo real.
 
-- **Git & GitHub**: Controle de versão e organização do projeto.
+- **SQL (planejado):** Persistência e gestão de dados para versões futuras.
+
+- **Figma:** Protótipo inicial de interface.
 
 ---
 
 ## 📈 Melhorias Futuras  
 
-- Implementação de **API REST com ASP.NET Core**.
+- Integração com **SQL** para persistência de dados reais.
 
-- Integração com **Banco de Dados (SQL Server ou PostgreSQL)**.
-
-- Criação de **DTOs e camadas (Service, Repository)**.
-
-- Autenticação e autorização de usuários.
-
-- Interface Web ou Mobile consumindo a API.
-
-- Relatórios de entregas e desempenho logístico.
+- Autenticação e diferentes níveis de usuário.
+ 
+- Exportação de relatórios em PDF/Excel.
+  
+- Dashboards com gráficos alimentados por dados reais.
+ 
+- Versão otimizada para múltiplos dispositivos móveis.
 
 ---
 
 <p align="justify">
-Este sistema foi criado no intuito de <strong>praticar e aprofundar conhecimentos em Programação Orientada a Objetos</strong>, servindo como base para a construção de um sistema de logística real, completo e escalável, com banco de dados e arquitetura moderna em <strong>.NET</strong>, que será desenvolvido em etapas futuras.
+Esse sistema foi criado no intuito de praticar e exercitar programação orientada a objetos, criação de classes, encapsulamento, polimorfismo, herança etc. O objetivo é conseguir reaproveitar essa prática e transformar em um sisteminha real com banco de dados e com .NET (que ainda será desenvolvido).
 </p>
