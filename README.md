@@ -67,9 +67,3 @@ Atualmente, os módulos funcionam de forma simulada, utilizando dados fictícios
 - Dashboards com gráficos alimentados por dados reais.
  
 - Versão otimizada para múltiplos dispositivos móveis.
-
----
-
-<p align="justify">
-Esse sistema foi criado no intuito de praticar e exercitar programação orientada a objetos, criação de classes, encapsulamento, polimorfismo, herança etc. O objetivo é conseguir reaproveitar essa prática e transformar em um sisteminha real com banco de dados e com .NET (que ainda será desenvolvido).
-</p>
